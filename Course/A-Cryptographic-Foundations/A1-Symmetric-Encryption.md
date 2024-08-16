@@ -399,7 +399,7 @@ Consolidate your knowledge and assess your understanding.
 - To get information about the key and encryption parameters stored in an encrypted file, you can use **-p** flag while encrypting a file:
 
     ```console
-    $ openssl enc -d -aes-256-cbc -in <encrypted_file> -out /dev/null -p # To get information about the encryption key and IV
+    $ openssl enc -aes-256-cbc -salt -in plaintext.txt -out /dev/null -pass file:./secret.key -v -p # To get information about the encryption key and IV
     ```
 
 - To list all available symmetric algorithms you can use the `list` command in `openssl`:
